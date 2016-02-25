@@ -19,5 +19,9 @@ def network ( connector ):
     return [name[0][0],dimension[0][0],specification[0][0],graphviz_text[0][0]]
 
 def numberOfParameter ( connector ):
-    result = query ( connector, "SELECT COUNT(ParameterIndex) FROM Signatures;" )
+    result = query( connector, "SELECT COUNT(ParameterIndex) FROM Signatures;" )
     return result[0][0]
+
+def getAllMorseGraphGV ( connector ):
+    result = query( connector, "SELECT * FROM MorseGraphViz;" )
+    return result
