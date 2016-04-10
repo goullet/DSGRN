@@ -19,8 +19,8 @@ set( TARGETS
         TestOrderParameter
         TestParameter
         TestParameterGraph
-	TestPoset )
-
+      	TestPoset )
+        
 foreach ( TARGET ${TARGETS} ) 
   add_executable ( ${TARGET} ${TARGET}.cpp )
   target_link_libraries ( ${TARGET} ${LIBS} )
