@@ -60,6 +60,14 @@ public:
   bool
   absorbing ( Domain const& dom, int collapse_dim, int direction ) const;
 
+  /// regulator
+  ///   Return the variable being regulated on the threshold
+  ///   indicated, where "variable" is the normal to the threshold
+  ///   and "threshold" indicates which threshold, counting from
+  ///   lower to highest, starting from 0.
+  uint64_t
+  regulator ( uint64_t variable, uint64_t threshold ) const;
+
   /// labelling
   ///   Returns a data structure representing if each wall is an
   ///   entrance or absorbing. The data structure is
@@ -68,6 +76,7 @@ public:
   ///   domain index. For domain indexing, see Domain.h.
   ///   Each uint64_t entry has bits corresponding to each of the
   ///   2*d walls in the following pattern:
+  ///     (from least significant to most significant bits)
   ///     left-0, left-1, left-2, ..., left-(d-1),
   ///     right-0, right-1, ... right(d-1)
   ///   A bit of 0 means entrance and 1 means absorbing.
