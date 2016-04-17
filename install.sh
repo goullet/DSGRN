@@ -29,9 +29,9 @@ $build --prefix=$PREFIX --searchpath=$SEARCHPATH --build=$BUILDTYPE $MASS || exi
 
 # Install Logic files
 echo Computing logic resource files. This may take several minutes.
-mkdir -p $PREFIX/share/DSGRN/logic         || exit 1
-./bin/NetworkLogic 6                       || exit 1
-mv -f *.dat $PREFIX/share/DSGRN/logic/     || exit 1
+#mkdir -p $PREFIX/share/DSGRN/logic         || exit 1
+#./bin/NetworkLogic 6                       || exit 1
+#mv -f *.dat $PREFIX/share/DSGRN/logic/     || exit 1
 
 # Build "DSGRN"
 cd ${SRC_ROOT}
