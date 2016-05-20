@@ -1,18 +1,30 @@
+'''
+
+'''
 import DSGRN_Database as dsgrnDB
 from ipywidgets import widgets
+from IPython.display import display
 
 
-def page_setup ( db ):
-    [networkName,networkDimension,networkSpecification,networkGraphviz_text] = dsgrnDB.network(db)
+def on_load_network_file_button_clicked(b):
+    # pattern.append(str(buttonDict[str(b.description)].description+" "+ toggleDict[str(b.description)].value))
+    # patternDisplay.value=mypattern()
+    print "Not Implemented yet"
 
-    name = widgets.Text(description='Name: ', padding=4)
-    name.padding = 4
 
-    eqs = widgets.Latex(
-    value="$$\\frac{n!}{k!(n-k)!} = \\binom{n}{k}$$",
-    )
+def page_setup ( ):
 
-    page = widgets.Box(children=[name,eqs])
-    page.padding = 4
+    networkFileText=''
+    # Field text to enter the path of the network
+    networkFileField = widgets.Textarea( description='Network File:',
+                                         value=networkFileText,
+                                         width=400,
+                                         padding=4,
+                                         height=35)
 
-    return page
+    networkFileLoadButton = widgets.Button ( description="Load network file" )
+    networkFileLoadButton.on_click(on_load_network_file_button_clicked)
+
+
+
+    display(widgets.HBox([networkFileField,networkFileLoadButton]))
